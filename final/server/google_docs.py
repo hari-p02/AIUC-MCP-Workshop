@@ -6,7 +6,6 @@ import os
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
-# load_dotenv("/Users/haripat/Desktop/SF/mcp_demo/.env")
 load_dotenv("../../.env")
 
 

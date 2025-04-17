@@ -70,10 +70,12 @@ def add_transaction(description: str, amount: float, category: Category) -> str:
         amount: The amount of the transaction
         category: The category of the transaction
     """
+    global df
     now = datetime.now()
     date_str = f"{now.month}/{now.day}/{now.strftime('%y')}"
     print(f"Adding transaction: {date_str}, {description}, {amount}, {category.value}")
-    worksheet.append_row([date_str, description, amount, category.value])
+    new_row = pd.DataFrame([[date_str, description, amount, category.value]], columns=df.columns)
+    df = pd.concat([df, new_row], ignore_index=True)
     return "Transaction added successfully"
 
 if __name__ == "__main__":

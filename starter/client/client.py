@@ -11,8 +11,6 @@ from anthropic import Anthropic
 from dotenv import load_dotenv
 load_dotenv("../../.env")
 
-# load_dotenv("/Users/haripat/Desktop/SF/mcp_demo/.env")  # change this path
-
 class MCPClient:
     def __init__(self, name: str):
         self.session: Optional[ClientSession] = None

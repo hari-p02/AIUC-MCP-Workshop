@@ -7,7 +7,6 @@ from enum import Enum
 from datetime import datetime
 import os
 from dotenv import load_dotenv
-# load_dotenv("/Users/haripat/Desktop/SF/mcp_demo/.env")
 load_dotenv("../../.env")
 
 
