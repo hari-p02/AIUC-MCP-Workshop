@@ -1,0 +1,10 @@
+servers:
+  - name: google_mail
+    description: "Use this service to send an email to the user"
+    url: "http://localhost:8020/sse"
+  - name: google_sheets
+    description: "Use this service to read and write transactions for the user"
+    url: "http://localhost:8010/sse"
+  - name: google_docs
+    description: "Use this tool to create a report for the user"
+    url: "http://localhost:8030/sse"
