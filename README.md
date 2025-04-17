@@ -14,7 +14,8 @@ In this 50 minute workshop we will go over the conceptual topics regarding MCPs 
 1. Git Clone this repository:
 
 ```
-
+git clone https://github.com/hari-p02/AIUC-MCP-Workshop.git
+cd AIUC-MCP-Workshop
 ```
 
 2. Sync with `uv`:
