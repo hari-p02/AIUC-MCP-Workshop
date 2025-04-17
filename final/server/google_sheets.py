@@ -47,6 +47,10 @@ class Category(Enum):
     TELEVISION = "Television"
     UTILITIES = "Utilities"
 
+class Operation(Enum):
+    SUM = "sum"
+    AVERAGE = "average"
+
 mcp = FastMCP("finance-sheets-server")
 
 @mcp.tool()
@@ -75,6 +79,31 @@ def add_transaction(description: str, amount: float, category: Category) -> str:
     print(f"Adding transaction: {date_str}, {description}, {amount}, {category.value}")
     worksheet.append_row([date_str, description, amount, category.value])
     return "Transaction added successfully"
+
+@mcp.tool()
+def metric_per_category(operation: Operation, category: Category) -> str:
+    """
+    Returns a metric for a given operation per category
+    
+    Args:
+        operation: The operation to perform
+        category: The category of the transaction
+    """
+    print(f"Calculating {operation.value} for {category.value}")
+    if operation == Operation.SUM:
+        return df[df["Category"] == category.value]["Amount"].sum()
+    elif operation == Operation.AVERAGE:
+        return df[df["Category"] == category.value]["Amount"].mean()
+
+@mcp.tool()
+def get_all_transactions() -> str:
+    """
+    Returns all of the user's transactions
+    
+    Args:
+        None
+    """
+    return df.to_string()
 
 if __name__ == "__main__":
     mcp_server = mcp._mcp_server
