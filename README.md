@@ -3,7 +3,7 @@
 
 Link to Workshop: https://www.aiuserconference.com/speaker/hari-patchigolla
 
-Video Recording: (Coming Soon!)
+Video Recording: https://www.youtube.com/watch?v=oCZMb_pr31k
 
 ### Overview
 
